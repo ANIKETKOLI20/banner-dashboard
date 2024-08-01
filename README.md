@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Ad Banner Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project enables the display and management of ad banners on a homepage. The ad banners are powered by a JSON list and include functionalities for editing and updating banner details. The project is structured with modular and reusable components for easy maintenance and scalability.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Display Ad Banners**: 
+  - List of ad banners powered by a JSON list.
+  - Each banner includes:
+    - Title
+    - Description
+    - Call-to-Action (CTA)
+    - Image
+    - Background/Template
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Edit Functionality**:
+  - Each ad banner has an edit icon.
+  - Clicking the edit icon opens a bottom sheet for modifying banner details.
+  - Updated details are reflected in the banner once changes are saved.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Component Structure
 
-### `npm test`
+1. **Ad Banner Component** (`BannerImageComp`):
+   - A reusable component to display ad banners.
+   - Properties: `title`, `description`, `cta`, `image`, `background`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Bottom Sheet Edit Component** (`EditBannerTemplateBs`):
+   - A separate component for editing ad banner details.
+   - Includes form elements for `title`, `description`, `cta`, `image`, and `background`.
+   - Utilizes a bottom sheet modal for user interactions.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+    ```bash
+    cd your-repository
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm run eject`
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Displaying Banners**: 
+  - The homepage component fetches and displays banners based on the JSON list.
+  - Ensure the JSON list is formatted correctly and includes the necessary fields.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Editing Banners**:
+  - Click the edit icon on any ad banner to open the bottom sheet.
+  - Modify the details in the bottom sheet form and save changes.
+  - The banner updates with the new details upon saving.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## JSON Structure
 
-## Learn More
+The JSON list should follow this format:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+[
+  {
+    "title": "Ad Banner Title",
+    "description": "Ad Banner Description",
+    "cta": "Call-to-Action Text",
+    "image": "URL to Image",
+    "background": "URL to Background Template"
+  }
+]
